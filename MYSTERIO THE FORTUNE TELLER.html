@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYSTERIO THE FORTUNE TELLER</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #16002e, #4b0082, #12001f);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 35px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+
+        h1 {
+            color: gold;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .genie {
+            font-size: 90px;
+            margin: 15px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        input {
+            width: 85%;
+            padding: 13px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background: gold;
+            color: #2b0040;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        #fortune {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            min-height: 30px;
+            font-size: 20px;
+            color: #ffe98a;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="genie">🧞</div>
+
+        <h1>Genie's Fortune Teller</h1>
+
+        <p>Ask the magical genie a question about your future!</p>
+
+        <input 
+            type="text" 
+            id="question" 
+            placeholder="Ask your question..."
+        >
+
+        <br>
+
+        <button onclick="tellFortune()">
+            🔮 Reveal My Fortune
+        </button>
+
+        <div id="fortune">
+            Your fortune will appear here...
+        </div>
+
+        <footer>
+            CREATOR..... LeBron OLUAH
+        </footer>
+
+    </div>
+
+    <script>
+        function tellFortune() {
+
+            let question = document.getElementById("question").value;
+
+            if (question.trim() === "") {
+                document.getElementById("fortune").innerHTML =
+                    "🧞 The genie says: Ask me a question first!";
+                return;
+            }
+
+            let fortunes = [
+                "✨ Great opportunities are coming your way.",
+                "🌟 Your hard work will soon bring good results.",
+                "🦵 You will break your leg.",
+                "🚀 A new adventure is waiting for you.",
+                "🌈 A difficult situation will become easier soon.",
+                "📚 Your knowledge will help you succeed.",
+                "🔥 Believe in yourself and keep moving forward.",
+                "☠️ You will die very soon.",
+                "⭐ Someone will soon recognize your talents.",
+                "👎 Bad things are coming your way!"
+            ];
+
+            let randomNumber = Math.floor(Math.random() * fortunes.length);
+
+            document.getElementById("fortune").innerHTML =
+                "🧞 The Genie says:<br><br>" + fortunes[randomNumber];
+        }
+    </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
